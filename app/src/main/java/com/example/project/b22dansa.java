@@ -10,10 +10,13 @@ public class b22dansa {
     public String category;
     public int size;
     public int cost;
+    public String img;
+
+
 
 
     public b22dansa(String ID, String name, String type, String company, String location,
-                    String category, int size, int cost) {
+                    String category, int size, int cost, String img) {
         this.ID = ID;
         this.name = name;
         this.type = type;
@@ -22,6 +25,7 @@ public class b22dansa {
         this.category = category;
         this.size = size;
         this.cost = cost;
+        this.img = img;
     }
 
     public String getName() {
@@ -86,5 +90,13 @@ public class b22dansa {
 
     public void setType(String type) {
         this.type = type;
+    }
+
+    public String getImg() {
+        return img;
+    }
+
+    public void setImg(String img) {
+        this.img = img;
     }
 }

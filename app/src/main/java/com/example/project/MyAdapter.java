@@ -4,6 +4,8 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebView;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -11,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.project.b22dansa;
 import com.example.project.R;
+import com.squareup.picasso.Picasso;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -43,6 +46,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
         holder.Category.setText("Category: " + item.getCategory());
         holder.Size.setText("Size: " + Integer.toString(item.getSize()));
         holder.Cost.setText("Cost: " + Integer.toString(item.getCost()));
+        Picasso.get().load(item.getImg()).into(holder.img);
 
     }
 
@@ -71,6 +75,8 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
 
         private final TextView Cost;
 
+        private final ImageView img;
+
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             this.ID = itemView.findViewById(R.id.ID);
@@ -81,6 +87,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
             this.Category = itemView.findViewById(R.id.Category);
             this.Size = itemView.findViewById(R.id.Size);
             this.Cost = itemView.findViewById(R.id.Cost);
+            this.img = itemView.findViewById(R.id.img);
         }
 
 

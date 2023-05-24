@@ -58,11 +58,12 @@ public class MainActivity extends AppCompatActivity implements JsonTask.JsonTask
                     String company = jsonObject.getString("company");
                     String location = jsonObject.getString("location");
                     String category = jsonObject.getString("category");
+                    String img = jsonObject.getString("auxdata");
                     int size = jsonObject.getInt("size");
                     int cost = jsonObject.getInt("cost");
 
                     // Create a new Mountain object and add it to the list
-                    adapter.B22dansaList.add(new b22dansa(ID, name, type, company, location, category, size, cost));
+                    adapter.B22dansaList.add(new b22dansa(ID, name, type, company, location, category, size, cost, img));
 
                 }
                 adapter.notifyDataSetChanged();
