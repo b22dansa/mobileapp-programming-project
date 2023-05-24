@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="250dp">
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#95abbb"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/ID"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:text="ID: " />
+
+        <TextView
+            android:id="@+id/Name"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:text="Name: " />
+
+        <TextView
+            android:id="@+id/Type"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:text="Type: " />
+
+        <TextView
+            android:id="@+id/Company"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:text="Company: " />
+
+        <TextView
+            android:id="@+id/Location"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:text="Location: " />
+
+        <TextView
+            android:id="@+id/Category"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:text="Category: " />
+
+        <TextView
+            android:id="@+id/Size"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:text="Size: " />
+
+        <TextView
+            android:id="@+id/Cost"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:text="Cost: " />
+
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
