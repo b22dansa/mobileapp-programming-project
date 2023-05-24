@@ -1,8 +1,11 @@
 package com.example.project;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -22,6 +25,8 @@ public class MainActivity extends AppCompatActivity implements JsonTask.JsonTask
 
     private MyAdapter adapter;
 
+    private Button ButtonToAbout;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,6 +43,13 @@ public class MainActivity extends AppCompatActivity implements JsonTask.JsonTask
 
         new JsonTask(this).execute(JSON_URL);
 
+        ButtonToAbout = findViewById(R.id.buttonToAbout);
+        ButtonToAbout.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, AboutActivity.class));
+            }
+        });
+
     }
 
     @SuppressLint("NotifyDataSetChanged")
@@ -46,12 +58,11 @@ public class MainActivity extends AppCompatActivity implements JsonTask.JsonTask
         Log.d("MainActivity", json);
         if (json != null) {
             try {
-                // Parse the JSON response
                 JSONArray jsonArray = new JSONArray(json);
                 for (int i = 0; i < jsonArray.length(); i++) {
                     JSONObject jsonObject = jsonArray.getJSONObject(i);
 
-                    // Extract data from JSON object
+                    // Extracting data from JSON object
                     String name = jsonObject.getString("name");
                     String ID = jsonObject.getString("ID");
                     String type = jsonObject.getString("type");
