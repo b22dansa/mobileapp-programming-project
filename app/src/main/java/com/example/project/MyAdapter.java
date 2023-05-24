@@ -38,14 +38,12 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
 
         b22dansa item = this.B22dansaList.get(position);
-        holder.ID.setText("ID: " + item.getID());
-        holder.Name.setText("Name: " + item.getName());
-        holder.Type.setText("Type: " + item.getType());
-        holder.Company.setText("Company: " + item.getCompany());
+        holder.Name.setText("Model: " + item.getName()); // Name
+        holder.Company.setText("Manufacturer: " + item.getCompany()); // Company
         holder.Location.setText("Location: " + item.getLocation());
-        holder.Category.setText("Category: " + item.getCategory());
-        holder.Size.setText("Size: " + Integer.toString(item.getSize()));
-        holder.Cost.setText("Cost: " + Integer.toString(item.getCost()));
+        holder.Category.setText("Engine: " + item.getCategory()); // Category
+        holder.Size.setText("Max Speed: " + Integer.toString(item.getSize()) + " km/h"); //
+        holder.Cost.setText("HP: " + Integer.toString(item.getCost())); // Cost
         Picasso.get().load(item.getImg()).into(holder.img);
 
     }
@@ -59,29 +57,17 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
-        private final TextView ID;
-
         private final TextView Name;
-
-        private final TextView Type;
-
         private final TextView Company;
-
         private final TextView Location;
-
         private final TextView Category;
-
         private final TextView Size;
-
         private final TextView Cost;
-
         private final ImageView img;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            this.ID = itemView.findViewById(R.id.ID);
             this.Name = itemView.findViewById(R.id.Name);
-            this.Type = itemView.findViewById(R.id.Type);
             this.Company = itemView.findViewById(R.id.Company);
             this.Location = itemView.findViewById(R.id.Location);
             this.Category = itemView.findViewById(R.id.Category);
